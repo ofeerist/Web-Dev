@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.brand-section {
+    width: 50%;
+    padding-right: 32px;
+    margin-bottom: 100px;
+}
+
+.brand-section h1 {
+    color: #1877f2;
+    font-size: 60px;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+}
+
+.brand-section p {
+    font-size: 28px;
+    line-height: 32px;
+    color: #1c1e21;
+}
+
+.login-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 396px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input {
+    height: 52px;
+    padding: 14px 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.login-btn {
+    background-color: #1877f2;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: #1877f2;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 4px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #dadde1;
+}
+
+.create-btn {
+    background-color: #42b72a;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 0 16px;
+    height: 48px;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.create-page {
+    margin-top: 28px;
+    font-size: 14px;
+    color: #1c1e21;
+    width: 380px;
+    text-align: center;
+}
+
+.create-page a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #1c1e21;
+}
+
+footer {
+    background: #fff;
+    padding: 20px 0;
+    color: #737373;
+    font-size: 12px;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #737373;
+}
