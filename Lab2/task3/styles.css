@@ -75,15 +75,18 @@ body {
     border-radius: 12px;
     padding: 24px;
     text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);;
 }
 
 .card h3 {
     margin: 0;
+    text-align: center;
 }
 
 .desc {
     color: #57606a;
     font-size: 14px;
+    text-align: center;
 }
 
 .price {
@@ -133,7 +136,6 @@ body {
 .badge {
     position: absolute;
     top: -12px;
-    right: 16px;
     background: #0969da;
     color: #fff;
     font-size: 12px;
