@@ -68,7 +68,7 @@ ul { list-style: none; padding: 0; }
 li {
     border-bottom: 1px solid #eee;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     align-items: center;
     padding: 10px 0;
     gap: 10px;
@@ -95,6 +95,23 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     border: 1px solid #ff4d4d;
+}
+
+.change-btn {
+    flex-shrink: 0;
+    background-color: transparent;
+    color: #277d83;
+    padding: 5px 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #277d83;
+}
+
+.change-btn:hover {
+    background-color: #277d83;
+    color: white;
+    border: 1px solid #277d83;
 }
 
 .delete-btn:hover {
