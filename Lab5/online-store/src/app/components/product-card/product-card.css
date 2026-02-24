@@ -1,0 +1,163 @@
+.card {
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 20px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.gallery {
+  margin-bottom: 16px;
+}
+
+.main-image-container {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.main-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  height: 40px;
+}
+
+.thumbnails img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.thumbnails img.active {
+  border-color: #f14635;
+}
+
+.product-title-link {
+  text-decoration: none;
+  color: #191919;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  height: 44px;
+  overflow: hidden;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.price-share-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.share-dropdown-container {
+  position: relative;
+}
+
+.share-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+
+.share-menu {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 10;
+  margin-bottom: 8px;
+}
+
+.share-item {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  transition: color 0.3s ease;
+}
+
+.share-item:hover {
+  background: white;
+}
+
+.share-item {
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+
+.share-item img {
+  width: 24px;
+  height: 24px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btn-like {
+  flex: 2;
+  background: #f14635;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-delete {
+  flex: 1;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

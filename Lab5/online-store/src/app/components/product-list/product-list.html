@@ -1,0 +1,10 @@
+<div class="product-grid" *ngIf="products.length > 0; else empty">
+  <app-product-card
+    *ngFor="let p of products"
+    [product]="p"
+    (remove)="onRemove($event)">
+  </app-product-card>
+</div>
+<ng-template #empty>
+  <div class="empty-container">В данной категории товаров не осталось.</div>
+</ng-template>

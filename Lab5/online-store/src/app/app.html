@@ -1,0 +1,17 @@
+<nav class="category-nav">
+  <img src="https://kaspi.kz/img/Logo.svg" alt="Kaspi" class="nav-logo">
+  <div class="container">
+  <button *ngFor="let cat of categories"
+          (click)="selectCategory(cat.id)"
+          [class.active]="selectedCategoryId === cat.id">
+    {{ cat.name }}
+  </button>
+  </div>
+</nav>
+
+<main>
+  <app-product-list
+    *ngIf="selectedCategoryId"
+    [categoryId]="selectedCategoryId">
+  </app-product-list>
+</main>

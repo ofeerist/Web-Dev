@@ -1,0 +1,48 @@
+.category-nav {
+  width: 100%;
+  display: flex;
+  background: white;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  justify-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-nav button {
+  padding: 10px 20px;
+  border: 1px solid #eef0f2;
+  border-radius: 20px;
+  background: #f8f9fa;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: #191919;
+}
+
+.category-nav button:hover {
+  background: #f146351a;
+  border-color: #f14635;
+}
+
+.category-nav button.active {
+  background: #f14635;
+  color: white;
+  border-color: #f14635;
+}
+
+.welcome-msg {
+  text-align: center;
+  padding: 100px 20px;
+  color: #777;
+}

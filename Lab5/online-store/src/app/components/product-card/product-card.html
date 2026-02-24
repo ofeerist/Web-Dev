@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="gallery">
+    <div class="main-image-container">
+      <img [src]="currentImage || product.image" class="main-image">
+    </div>
+    <div class="thumbnails" *ngIf="product.images.length > 1">
+      <img *ngFor="let img of product.images" [src]="img"
+           (click)="setCurrentImage(img)"
+           [class.active]="(currentImage || product.image) === img">
+    </div>
+  </div>
+
+  <div class="details">
+    <h3>{{ product.name }}</h3>
+
+    <div class="rating-container">
+      <div class="stars">
+        <ng-container *ngFor="let s of starsArray">
+          <svg *ngIf="s === 1" width="16" height="16" fill="#FFC107" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>
+          <svg *ngIf="s === 0.5" width="16" height="16" fill="#FFC107" viewBox="0 0 16 16"><path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.54.54 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8 2.223v9.804z"/></svg>
+          <svg *ngIf="s === 0" width="16" height="16" fill="#E0E0E0" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>
+        </ng-container>
+      </div>
+      <span>{{ product.rating }} | ❤️ {{ product.likes }}</span>
+    </div>
+
+    <div class="price-share-container">
+      <div class="price">{{ product.price | number }} ₸</div>
+      <div class="share-dropdown-container">
+        <button class="share-icon-btn" (click)="toggleShareMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+          </svg>
+        </button>
+        <div class="share-menu" *ngIf="showShareMenu">
+          <button (click)="share('whatsapp')" class="share-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+          </button>
+          <button (click)="share('telegram')" class="share-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-actions">
+      <button class="btn-like" (click)="like()">Лайк</button>
+      <button class="btn-delete"
+              (click)="deleteProduct()"
+              [disabled]="product.likes>=10"
+      >Удалить</button>
+    </div>
+  </div>
+</div>
