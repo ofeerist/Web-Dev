@@ -1,0 +1,36 @@
+.about-container {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.about-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+}
+
+.about-card p {
+  font-size: 1.125rem;
+  color: #374151;
+  margin: 0 0 1rem 0;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  font-weight: 600;
+  color: #111827;
+  margin-right: 0.5rem;
+}

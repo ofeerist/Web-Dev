@@ -1,0 +1,51 @@
+<div class="detail-container">
+  @if (isSaving()) {
+    <div class="overlay-loader">
+      <div class="spinner"></div>
+    </div>
+  }
+
+  <a routerLink="/albums" class="btn-back">
+    &larr; Back to Albums
+  </a>
+
+  @if (isLoading()) {
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+  } @else if (album()) {
+    <div class="info-card">
+      <h2 class="card-title">Album Information</h2>
+
+      <div class="info-grid">
+        <div class="info-box">
+          <span class="box-label">Album ID</span>
+          <span class="box-value">{{ album()?.id }}</span>
+        </div>
+        <div class="info-box">
+          <span class="box-label">User ID</span>
+          <span class="box-value">{{ album()?.userId }}</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="albumTitle">Album Title</label>
+        <input
+          id="albumTitle"
+          [value]="editTitle()"
+          (input)="onTitleChange($event)"
+          class="form-input"
+          [disabled]="isSaving()">
+      </div>
+
+      <div class="actions">
+        <button (click)="save()" class="btn-save" [disabled]="isSaving()">
+          Save Changes
+        </button>
+        <a [routerLink]="['/albums', album()?.id, 'photos']" class="btn-view">
+          View Photos
+        </a>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,25 @@
+<div class="photos-container">
+  <a [routerLink]="['/albums', albumId()]" class="btn-back">
+    &larr; Back to Album Details
+  </a>
+
+  <h2 class="page-title">Album Photos</h2>
+
+  @if (isLoading()) {
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+  } @else {
+    <div class="photo-grid">
+      @for (photo of photos(); track photo.id) {
+        <div class="photo-card">
+          <img [src]="photo.thumbnailUrl" [alt]="photo.title" class="photo-img">
+          <div class="photo-overlay">
+            <p class="photo-title">{{ photo.title }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
+

@@ -1,0 +1,32 @@
+<div class="albums-container">
+  @if (deletingAlbumId() !== null) {
+    <div class="overlay-loader">
+      <div class="spinner"></div>
+    </div>
+  }
+
+  <h2 class="page-title">All Albums</h2>
+
+  @if (isLoading()) {
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+  } @else {
+    <div class="albums-list">
+      @for (album of albums(); track album.id) {
+        <div class="album-item" [routerLink]="['/albums', album.id]">
+          <div class="album-info">
+            <span class="album-badge">{{ album.id }}</span>
+            <span class="album-title">{{ album.title }}</span>
+          </div>
+          <button
+            class="btn-delete"
+            (click)="deleteAlbum($event, album.id)"
+            [disabled]="deletingAlbumId() !== null">
+            Delete
+          </button>
+        </div>
+      }
+    </div>
+  }
+</div>
